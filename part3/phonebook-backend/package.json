@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "lint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:ui": "rm -rf build && cd C:\\Users\\Nemanja\\Desktop\\Full Stack JavaScript\\part2\\phonebook && npm run build --prod && cp -r build C:\\Users\\Nemanja\\Desktop\\Again\\part3\\phonebook-backend",
     "deploy": "git push heroku master",
@@ -23,6 +24,13 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-standard": "^4.0.1",
     "nodemon": "^2.0.3"
   }
 }
