@@ -47,9 +47,8 @@ const format = person => {
         id: person._id
     }
 }
-app.get('/', (req, res) => {
-    res.send('<h1>Hello</h1>')
-})
+
+
 app.get('/api/persons', (req, res, next) => {
     Person.find({}).then(persons => {
         res.status(200).json(persons.map(format))
@@ -82,12 +81,7 @@ app.delete('/api/persons/:id', (req, res, next) => {
         })
         .catch(error => next(error))
 
-})/*
-const generateId = () => {
-    const id = persons.length > 0 ?
-        Math.floor(Math.random() * (500 - (Math.max(...persons.map(p => p.id))) + Math.max(...persons.map(p => p.id)))) : 0
-    return id;
-}*/
+})
 
 app.post('/api/persons', (req, res, next) => {
     const body = req.body;
