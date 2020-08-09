@@ -1,21 +1,10 @@
 const mongoose = require('mongoose')
-
 if (process.argv.length < 3) {
     console.log('Give password as argument')
     process.exit(1)
-}/*
-if (process.argv.length === 3) {
-    Person.find({}).then(result => {
-        result.forEach(person => {
-            console.log(person)
-            mongoose.connection.close()
-        })
-
-    })
-}*/
+}
 
 const password = process.argv[2]
-
 const url = `mongodb+srv://nemanja:${password}@cluster0-tqxaa.mongodb.net/phonebook-app?retryWrites=true&w=majority`
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
