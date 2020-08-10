@@ -37,8 +37,8 @@ let persons = [
 ]
 
 app.get('/api/persons', (req, res, next) => {
-    Person.find({}).then(persons =>
-        res.status(200).json(persons))
+    Person.find({}).then(persons => 
+        res.json(persons.map(person => person.toJSON())))
         .catch(error => next(error))
 })
 
@@ -119,7 +119,7 @@ const errorHandler = (error, req, res, next) => {
 }
 app.use(errorHandler);
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT||3001;
 app.listen(PORT, () => 
     console.log(`Server running on port ${PORT}`)
 );
